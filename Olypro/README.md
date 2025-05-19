@@ -1,38 +1,85 @@
-# sv
+# OlyPro - Weightlifting Progress Tracker
 
-Everything you need to build a Svelte project, powered by [`sv`](https://github.com/sveltejs/cli).
+A web application for tracking weightlifting progress, creating programs, and sharing form videos.
 
-## Creating a project
+## Features
 
-If you're seeing this, you've probably already done this step. Congrats!
+- User registration and authentication
+- Track weight, sets, and reps
+- Create and manage training programs
+- Share and review form videos
+- Progress tracking and analytics
 
+## Prerequisites
+
+- Node.js (v18 or higher)
+- MongoDB Atlas account
+- npm or yarn package manager
+
+## Installation
+
+1. Clone the repository:
 ```bash
-# create a new project in the current directory
-npx sv create
-
-# create a new project in my-app
-npx sv create my-app
+git clone https://github.com/Westini/OlyPro.git
+cd OlyPro
 ```
 
-## Developing
+2. Install dependencies:
+```bash
+npm install
+```
 
-Once you've created a project and installed dependencies with `npm install` (or `pnpm install` or `yarn`), start a development server:
+3. Create a `.env` file in the root directory with the following variables:
+```env
+MONGODB_URI="your_mongodb_atlas_connection_string"
+DB_NAME="weightlifting"
+NODE_ENV="development"
+DEV_URL="http://localhost:3000"
+```
 
+4. Start the development server:
 ```bash
 npm run dev
-
-# or start the server and open the app in a new browser tab
-npm run dev -- --open
 ```
 
-## Building
+The application will be available at `http://localhost:3000`
 
-To create a production version of your app:
+## Dependencies
 
-```bash
-npm run build
+- SvelteKit - Web framework
+- MongoDB - Database
+- bcrypt - Password hashing
+- dotenv - Environment variable management
+
+## Development
+
+- `npm run dev` - Start development server
+- `npm run build` - Build for production
+- `npm run preview` - Preview production build
+- `npm run check` - Type checking
+- `npm run check:watch` - Watch mode for type checking
+
+## Project Structure
+
+```
+src/
+├── lib/           # Shared utilities and components
+│   └── db/        # Database configuration
+├── routes/        # Application routes
+│   ├── users/     # User management
+│   ├── account/   # User account
+│   └── api/       # API endpoints
+└── app.css        # Global styles
 ```
 
-You can preview the production build with `npm run preview`.
+## Contributing
 
-> To deploy your app, you may need to install an [adapter](https://svelte.dev/docs/kit/adapters) for your target environment.
+1. Fork the repository
+2. Create your feature branch (`git checkout -b feature/amazing-feature`)
+3. Commit your changes (`git commit -m 'Add some amazing feature'`)
+4. Push to the branch (`git push origin feature/amazing-feature`)
+5. Open a Pull Request
+
+## License
+
+This project is licensed under the MIT License.
